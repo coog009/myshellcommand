@@ -6,7 +6,7 @@ function InstallOrUninstall() {
 		if [ -x $file -a ! -d $file ]; then
 			case "$1" in
 				install)
-					libtool --mode=install cp $file /usr/local/bin
+					libtool --mode=install cp -a $file /usr/local/bin
 				;;
 				uninstall)
 					libtool --mode=uninstall rm /usr/local/bin/$file
