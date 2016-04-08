@@ -17,3 +17,16 @@ function InstallOrUninstall() {
 }
 
 InstallOrUninstall $1
+
+case "$1" in
+	install)
+		if [ ! -e $HOME/.myshellcmd ];then
+			mkdir $HOME/.myshellcmd
+		fi
+	;;
+	uninstall)
+		if [ -e $HOME/.myshellcmd ];then
+			rm -rf $HOME/.myshellcmd
+		fi
+	;;
+esac
